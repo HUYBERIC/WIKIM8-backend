@@ -22,7 +22,7 @@ router.post('/', verifyToken, async (req, res) => {
 // Récupérer tous les matchs
 router.get('/', async (req, res) => {
   const { page = 1, limit = 10, enjeu, scoreBO, mvp } = req.query;
-
+  console.log('Requête reçue sur /api/rocketleague')
   try {
     const query = {};
     if (enjeu) query.enjeu = enjeu;

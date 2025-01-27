@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const RocketLeagueMatchSchema = new mongoose.Schema({
+  date: {
+    type: Date, // Exemple : "2025-01-26"
+    required: true,
+  },
   equipe1: {
     nom: {
       type: String, // Exemple : "Gentle Mates"
@@ -42,7 +46,7 @@ const RocketLeagueMatchSchema = new mongoose.Schema({
     required: true,
   },
   scoreBO: {
-    type: String, // Exemple : "3 - 2"
+    type: String, // Exemple : "3-2"
     required: true,
   },
   matchs: [
@@ -70,7 +74,10 @@ const RocketLeagueMatchSchema = new mongoose.Schema({
         saves: Number,
       },
     ],
-    mvp: [String], // MVP du match
+    mvp: {
+      type: String, // Exemple : "Player1"
+      required: true,
+    },
   },
 }, { timestamps: true });
 
